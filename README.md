@@ -619,16 +619,18 @@ import armyc2.c5isr.renderer.utilities.SymbolID;
 // Start with a base symbol ID
 String baseID = "10031000001512000000000000000000";
 
-// Change the affiliation to hostile
-String hostileID = SymbolID.setStandardIdentity(baseID, 
-    SymbolID.StandardIdentity_Context_Reality, 
+// Change the affiliation to hostile (position 4)
+String hostileID = SymbolID.setAffiliation(baseID, 
     SymbolID.StandardIdentity_Affiliation_Hostile_Faker);
 
-// Change the echelon to battalion
-String battalionID = SymbolID.setEchelon(baseID, "16");
+// Change the echelon/amplifier descriptor to battalion (positions 9-10)
+String battalionID = SymbolID.setAmplifierDescriptor(baseID, 16);
 
-// Change the status to planned
-String plannedID = SymbolID.setStatus(baseID, '1');
+// Change the status to planned (position 7)
+String plannedID = SymbolID.setStatus(baseID, 1);
+
+// Change the version
+String newVersionID = SymbolID.setVersion(baseID, SymbolID.Version_2525Ech1);
 
 // Get parts of a symbol ID
 int version = SymbolID.getVersion(baseID);
