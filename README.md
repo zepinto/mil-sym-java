@@ -80,13 +80,13 @@ These represent areas, lines, or complex shapes:
 
 ## Symbol ID Structure
 
-A MIL-STD-2525D/E Symbol Identification Code (SIDC) is a 20-digit string that uniquely identifies a military symbol. Understanding this structure is crucial for creating symbols.
+A MIL-STD-2525D/E Symbol Identification Code (SIDC) is a string that uniquely identifies a military symbol. The minimum length is 20 digits, but it can extend to 30 digits to include additional modifiers. Understanding this structure is crucial for creating symbols.
 
-### Symbol ID Format (20 digits)
+### Symbol ID Format (20-30 digits)
 
 ```
-Position:  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
-Format:   [V][V][C][A][SS ][S][H][EE ][EEEEEE      ][MMMMMM      ]
+Position:  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30
+Format:   [V][V][C][A][SS ][S][H][EE ][EEEEEE      ][MMMMMM      ][optional 10 digits      ]
 ```
 
 **Breakdown:**
@@ -99,7 +99,7 @@ Format:   [V][V][C][A][SS ][S][H][EE ][EEEEEE      ][MMMMMM      ]
 - **Positions 9-10**: Echelon/Mobility (11=Team/Crew, 12=Squad, 15=Company, 16=Battalion, 21=Division, etc.)
 - **Positions 11-16**: Entity Code (specific unit/equipment type within the symbol set)
 - **Positions 17-20**: Modifier 1 (0000 for none)
-- **Positions 21-22**: Modifier 2 (00 for none) - Note: Symbol ID can be 20-30 digits
+- **Positions 21-30**: Additional modifiers (optional, typically zeros for basic symbols)
 
 ### Symbol Set Values
 
